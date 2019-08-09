@@ -14,7 +14,7 @@ import { from } from 'rxjs';
 export class HeroesComponent implements OnInit {
  
   //heroes=HEROES;
-  selectedHero:Hero;
+ // selectedHero:Hero;
   heroes:Hero[];
   
 
@@ -24,15 +24,16 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero : Hero): void{
+  /* onSelect(hero : Hero): void{
     this.selectedHero=hero;
-  }
+  } */
 
   /* getHeroes():void{
     this.heroes = this.heroService.getHeroes();
   } */
 
   getHeroes():void{
-    this.heroService.getHeroes().subscribe(heroes=>this.heroes = heroes);
+    this.heroService.getHeroes()
+    .subscribe(heroes=>this.heroes = heroes);
    }
 }
